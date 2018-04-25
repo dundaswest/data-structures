@@ -7,12 +7,12 @@ var Stack = function() {
   // Implement the methods below
   someInstance.push = function(value) {
     size++;
-    storage['last'] = value;
+    storage[size] = value;
   };
 
   someInstance.pop = function() {
     size--;
-    return storage['last'];
+    return storage[size+1];
   };
 
   someInstance.size = function() {
@@ -23,7 +23,3 @@ var Stack = function() {
 };
 
 
-/*stack.push('a');
-expect(stack.pop()).to.equal('a');
-stack.push('b');
-expect(stack.pop()).to.equal('b');*/
