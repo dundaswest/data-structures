@@ -2,18 +2,38 @@
 
 // Instantiate a new graph
 var Graph = function() {
+  //this....
+  this.nodeArray = [];
 };
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
+  var nodeObj = {};
+  nodeObj.value = node;
+  this.nodeArray.push(nodeObj);
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
+  
+  for(var i = 0; i < this.nodeArray.length; i++){
+    if(this.nodeArray[i].value === node){
+      return true;
+    }
+  }
+  return false;
+  
 };
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
+  
+  for(var i = 0; i < this.nodeArray.length; i++){
+    if(this.nodeArray[i].value === node){
+      this.nodeArray[i] = 0;
+      // need to refactor array to remove element
+    }
+  }
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
@@ -35,5 +55,5 @@ Graph.prototype.forEachNode = function(cb) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
+ 
 

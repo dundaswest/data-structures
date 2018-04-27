@@ -13,7 +13,6 @@ var treeMethods = {};
 treeMethods.addChild = function(value) {
   var childTree = Tree(value);
   this.children.push(childTree);
-  console.log(this.children)
 };
 
 treeMethods.contains = function(target) {
@@ -30,7 +29,7 @@ treeMethods.contains = function(target) {
     }
       
     return false;     
-  }
+  };
   return checkTree(this);
 };
 
