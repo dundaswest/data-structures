@@ -31,7 +31,7 @@ Graph.prototype.removeNode = function(node) {
   
   for(var i = 0; i < this.nodeArray.length; i++){
     if(this.nodeArray[i].value === node){
-      this.nodeArray.splice(i,1)
+      this.nodeArray.splice(i,1);
     }
   }
 };
@@ -41,12 +41,12 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
   var fromNodeObj = {};
   var toNodeObj = {};
   for(var i = 0; i < this.nodeArray.length; i++) {
-   if(this.nodeArray[i].value === fromNode) {
-    fromNodeObj = this.nodeArray[i];
-   } 
-   if(this.nodeArray[i].value === toNode) {
-    toNodeObj = this.nodeArray[i];
-   }
+    if(this.nodeArray[i].value === fromNode) {
+      fromNodeObj = this.nodeArray[i];
+    } 
+    if(this.nodeArray[i].value === toNode) {
+      toNodeObj = this.nodeArray[i];
+    }
   }
   
   var result1 = false;
@@ -59,7 +59,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
       }
     }
   }
-  if(toNodeObj.links){
+  if(toNodeObj.links) {
     for(var i = 0; i < toNodeObj.links.length; i++){
       if(toNodeObj.links[i] === fromNodeObj){
         result2 = true;
@@ -77,12 +77,12 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
   var fromNodeObj = {};
   var toNodeObj = {};
   for(var i = 0; i < this.nodeArray.length; i++) {
-   if(this.nodeArray[i].value === fromNode) {
-    fromNodeObj = this.nodeArray[i];
-   } 
-   if(this.nodeArray[i].value === toNode) {
-    toNodeObj = this.nodeArray[i];
-   }
+    if(this.nodeArray[i].value === fromNode) {
+      fromNodeObj = this.nodeArray[i];
+    } 
+    if(this.nodeArray[i].value === toNode) {
+      toNodeObj = this.nodeArray[i];
+    }
   }
   fromNodeObj.links.push(toNodeObj);
   toNodeObj.links.push(fromNodeObj);
@@ -94,12 +94,12 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
   var fromNodeObj = {};
   var toNodeObj = {};
   for(var i = 0; i < this.nodeArray.length; i++) {
-   if(this.nodeArray[i].value === fromNode) {
-    fromNodeObj = this.nodeArray[i];
-   } 
-   if(this.nodeArray[i].value === toNode) {
-    toNodeObj = this.nodeArray[i];
-   }
+    if(this.nodeArray[i].value === fromNode) {
+      fromNodeObj = this.nodeArray[i];
+    } 
+    if(this.nodeArray[i].value === toNode) {
+      toNodeObj = this.nodeArray[i];
+    }
   }
   
  
@@ -122,7 +122,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(callback){
   return this.nodeArray.forEach(function(node){
-   return callback(node.value);
+    return callback(node.value);
   });
  
 };
