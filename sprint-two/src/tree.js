@@ -21,19 +21,18 @@ treeMethods.contains = function(target) {
     if(node.value === target) {
       return true;
     }
-    
-    for(var i = 0; i < node.children.length; i++){
-      if (checkTree(node.children[i])){
-        return true;
-      }
-    }
+    if(node.children.length > 0){
       
+      for(var i = 0; i < node.children.length; i++){
+        if (checkTree(node.children[i])){
+          return true;
+        }
+      }
+    }   
     return false;     
   };
   return checkTree(this);
 };
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions?

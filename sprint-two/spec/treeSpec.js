@@ -1,6 +1,6 @@
 describe('tree', function() {
   var tree;
-
+  
   beforeEach(function() {
     tree = Tree();
   });
